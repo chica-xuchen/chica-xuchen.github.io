@@ -1,0 +1,40 @@
+body{
+	margin: 0;
+	background-color:mediumpurple;
+}
+.box{
+	width: 1000px;
+	margin: 100px auto;
+}
+.box textarea{
+	width: 400px;
+	height: 500px;
+	font: 16px "微软雅黑";
+	padding: 10px;
+	background-color: #BCE8F1;
+	border-radius:10px ;
+}
+.box .change{
+	display: inline-block;
+	width: 130px;
+	text-align: center;	
+	position: relative;
+}
+.box .change .right{
+	width: 100px;
+	height:80px;
+	background-color: #00A8FF;
+	border-radius:10px ;
+	font: 16px/35px "微软雅黑";
+	color: #fff;
+	position: absolute;
+	bottom: 220px;
+	left: 15px;
+}
+.total{
+	font: 20px "微软雅黑";
+	color: #00A8FF;
+	position: absolute;
+	bottom: 180px;
+	left: 45px;
+}

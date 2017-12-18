@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="index.css"/>
+	</head>
+	<body>
+		<div class="box">
+			<textarea name="" rows="" cols=""></textarea>
+			<div class="change">
+				<div class="right">
+					→</br>
+					把文字右移
+				</div>
+				<div class="total">
+				<span class="changeShu">0</span>/<span class="shu">0</span>
+				</div>
+			</div>
+			<textarea name="" rows="" cols=""></textarea>
+		</div>
+		
+		
+		<script type="text/javascript">
+			//获取元素
+			let textarea=document.querySelectorAll('textarea');
+			let btn=document.querySelector('.right');
+			let total=document.querySelector('.total');
+			let span=document.querySelectorAll('span');
+			console.log(span);
+			
+			let timer=null;
+			
+			let isClick=false;//初始化为关闭状态
+			
+			
+			
+			
+			//点击按钮把左边输入文本框里的内容移到右边
+			btn.onclick=()=>{
+				
+				if(isClick){
+					return 
+				}
+				isClick=true;
+				
+				textarea[1].value='';
+				
+				let num=0;//初始化数值
+//				span[0].innerHTML=num;
+				
+				let text1=textarea[0].value;
+				
+				
+				timer=setInterval(()=>{
+					num++;
+					textarea[1].value+=text1.charAt(num-1);//右边的值等于左文本框索引值为num-1的值
+					textarea[0].value=text1.slice(num);//左边的值为从num++过后得到的num到字符串截取完的值
+					
+					if(textarea[0].value==''){
+						clearInterval(timer);
+						isClick=false;
+					}
+					span[0].innerHTML=num;
+					
+				},200)
+				
+				
+				
+				span[1].innerHTML=text1.length;
+				
+			}
+			
+		</script>
+	</body>
+</html>
